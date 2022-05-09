@@ -14,10 +14,10 @@ services:
             - --entrypoints.web.address=:80
             - --entryPoints.websecure.address=:443
 
-            - --log.level=DEBUG # Don't do that in production
+            #- --log.level=DEBUG # Don't do that in production
             - --providers.docker
-            - --api.insecure # Don't do that in production
-            - --api.debug # Don't do that in production
+            #- --api.insecure # Don't do that in production
+            #- --api.debug # Don't do that in production
 
             - --certificatesresolvers.le.acme.email=lbozzi@gmail.com
             - --certificatesresolvers.le.acme.storage=/opt/traefik/acme.json
@@ -27,7 +27,7 @@ services:
         ports:
             - "80:80"
             - "443:443"
-            - "8080:8080"
+            #- "8080:8080"
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock:ro
             - /odoo_ar/traefik/:/opt/traefik/
